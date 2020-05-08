@@ -3,7 +3,7 @@
 
 ## simple_ ptt_crawler is a simpe telnet ptt crawler
 
-######  Config
+Config
 ```batch=
 [USER]
 name=<username>
