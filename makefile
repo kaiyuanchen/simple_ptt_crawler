@@ -10,8 +10,8 @@ test:
                   --cov=./ test/
 
 clean:
-    rm coverage.xml
+	rm coverage.xml *.out
 
 run:
-	python3 ptt_crawler/main.py --board=aaa --index=123 --out=bbb
+	python3 ptt_crawler/main.py  --out=article.out --log_conf=conf_log.ini --conf=conf_product.ini
 	
