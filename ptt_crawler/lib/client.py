@@ -1,11 +1,11 @@
+import logging
 import telnetlib
 import time
-import logging
 from abc import abstractmethod
-from .screen import Screen
+
 from .exception import GetScreenLimitError
 from .key import CommandKey
-
+from .screen import Screen
 
 class Client:
     @abstractmethod

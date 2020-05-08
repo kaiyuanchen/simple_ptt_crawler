@@ -1,8 +1,8 @@
-from .client import Client
-from .key import ScreenKeyword, CommandKey
 import logging
 import re
 
+from .client import Client
+from .key import ScreenKeyword, CommandKey
 
 class Command:
 

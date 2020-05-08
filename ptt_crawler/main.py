@@ -9,11 +9,13 @@ Options:
   --conf=<arg>
 """
 
-from docopt import docopt
-from lib.client import TelnetClient
-from lib.command import Command
 import configparser
 import logging.config
+
+from docopt import docopt
+
+from lib.client import TelnetClient
+from lib.command import Command
 
 if __name__ == '__main__':
     arguments = docopt(__doc__)
