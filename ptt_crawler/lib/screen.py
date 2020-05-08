@@ -128,5 +128,3 @@ class Screen:
             lines.append("".join(self.__screen[i]))
 
         return "\n".join(lines)
-
-

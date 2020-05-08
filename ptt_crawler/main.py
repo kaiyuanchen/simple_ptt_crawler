@@ -14,7 +14,6 @@ from lib.client import TelnetClient
 from lib.command import Command
 import configparser
 import logging.config
-import sys
 
 if __name__ == '__main__':
     arguments = docopt(__doc__)

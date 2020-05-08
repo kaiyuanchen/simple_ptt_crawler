@@ -1,4 +1,3 @@
-import unittest
 from unittest import TestCase
 from ptt_crawler.lib.client import TelnetClient
 

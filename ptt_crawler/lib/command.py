@@ -35,9 +35,7 @@ class Command:
 
     def get_article(self, board: str, index: int) -> str:
         self._get_board(board)
-        foo=self.__client.submit(str(index) + CommandKey.Enter)
-        print("get board", foo, str(index) + CommandKey.Enter)
-
+        self.__client.submit(str(index) + CommandKey.Enter)
         self.__client.submit(CommandKey.Right)
 
         lines = []
@@ -65,7 +63,7 @@ class Command:
             start_line = int(match_artice_footer.groups()[2])
             end_line = int(match_artice_footer.groups()[3])
 
-            if start_line == 1: # adjust the index of first page
+            if start_line == 1:  # adjust the index of first page
                 start_line = 0
 
             content = self.__client.get_screen(0, 23)
@@ -100,6 +98,3 @@ class Command:
                 break
             else:
                 self.__client.submit(CommandKey.Left)
-
-
-
