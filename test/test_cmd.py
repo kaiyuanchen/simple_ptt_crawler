@@ -12,6 +12,10 @@ class TestCommand(TestCase):
 
     def test_login(self):
         self.__command.login("aaa", "bbb")
-        self.assertEqual(self.__mock_client.submit.call_args_list[0], mock.call('aaa\r\n'))
-        self.assertEqual(self.__mock_client.submit.call_args_list[1], mock.call('bbb\r\n'))
+        self.assertEqual(
+            self.__mock_client.submit.call_args_list[0],
+            mock.call('aaa\r\n'))
+        self.assertEqual(
+            self.__mock_client.submit.call_args_list[1],
+            mock.call('bbb\r\n'))
         self.__mock_client.submit.reset_mock()

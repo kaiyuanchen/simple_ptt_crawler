@@ -7,6 +7,7 @@ from .exception import GetScreenLimitError
 from .key import CommandKey
 from .screen import Screen
 
+
 class Client:
     @abstractmethod
     def start(self) -> None:

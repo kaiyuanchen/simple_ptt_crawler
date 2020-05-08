@@ -4,6 +4,7 @@ import re
 from .client import Client
 from .key import ScreenKeyword, CommandKey
 
+
 class Command:
 
     _login_status = False
