@@ -59,7 +59,13 @@ class TelnetClient(Client):
 
     def submit(self, key: str) -> str:
         logging.debug("submit {}".format(key))
-        self.__telnet.write(key.encode('big5'))
+
+        try:
+            self.__telnet.write(key.encode('big5'))
+        except Exception as e:
+            logging.error("submit fail")
+            raise e
+
         time.sleep(self.__timeout)
         resp = self.__telnet.read_very_eager().decode('big5', 'ignore')
         return self.__screen.render(resp)

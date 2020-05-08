@@ -1,3 +1,4 @@
+import logging
 import re
 
 
@@ -124,7 +125,12 @@ class Screen:
 
     def get_screen(self, start, limit) -> str:
         lines = []
-        for i in range(start, start + limit):
-            lines.append("".join(self.__screen[i]))
+
+        try:
+            for i in range(start, start + limit):
+                lines.append("".join(self.__screen[i]))
+        except Exception as e:
+            logging.error(e)
+            lines = []
 
         return "\n".join(lines)

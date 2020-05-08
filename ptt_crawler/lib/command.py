@@ -43,8 +43,6 @@ class Command:
         while True:
             footer = self.__client.get_footer()
 
-            print("footer", footer)
-
             match_artice_footer = \
                 re.search(
                     "".join(ScreenKeyword.article_position),
@@ -62,7 +60,6 @@ class Command:
 
             progress = int(match_artice_footer.groups()[1])
             start_line = int(match_artice_footer.groups()[2])
-            end_line = int(match_artice_footer.groups()[3])
 
             if start_line == 1:  # adjust the index of first page
                 start_line = 0
@@ -70,12 +67,9 @@ class Command:
             content = self.__client.get_screen(0, 23)
             curr_lines = content.split("\n")
 
-            print("progress", progress)
-
             lines[start_line:] = curr_lines
 
             if progress == 100:
-                print(len(lines), end_line)
                 break
 
             self.__client.go_next_page()
