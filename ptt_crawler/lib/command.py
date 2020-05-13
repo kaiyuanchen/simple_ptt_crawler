@@ -35,7 +35,7 @@ class Command:
             logging.info("login success ^^")
 
     def get_article(self, board: str, index: int) -> str:
-        self._get_board(board)
+        self.__get_board(board)
         self.__client.submit(str(index) + CommandKey.Enter)
         self.__client.submit(CommandKey.Right)
 
@@ -75,8 +75,8 @@ class Command:
             self.__client.go_next_page()
         return "\n".join(lines)
 
-    def _get_board(self, board):
-        self._go_main_menu()
+    def __get_board(self, board):
+        self.__go_main_menu()
         self.__client.submit("s")
         curr_content = self.__client.submit(board + CommandKey.Enter)
         curr_content_lines = curr_content.split("\n")
@@ -86,7 +86,7 @@ class Command:
 
         return curr_content
 
-    def _go_main_menu(self):
+    def __go_main_menu(self):
         while True:
             header = self.__client.get_header()
             if re.search(ScreenKeyword.menu, header, re.I):
