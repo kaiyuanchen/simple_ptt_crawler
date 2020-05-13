@@ -1,7 +1,7 @@
 from unittest import TestCase
 from unittest import mock
 
-from lib.key import ScreenKeyword
+from ptt_crawler.lib.key import ScreenKeyword
 from ptt_crawler.lib.command import Command
 
 
